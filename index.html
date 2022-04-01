@@ -11,13 +11,13 @@
       grid-auto-rows: minmax(100px, auto);
     }
 
-    #cambio {
+    #change {
       margin-top: 10%;
       grid-column: 1;
       grid-row: 1;
     }
 
-    #funciones {
+    #functions {
       grid-column: 2;
       grid-row: 1;
     }
@@ -26,48 +26,48 @@
 
 <body>
   <div id="grid">
-    <div id="cambio">
-      <button id="activar_reloj">Reloj</button>
+    <div id="change">
+      <button id="watch_activation">Reloj</button>
       <br>
       <br>
-      <button id="activar_cronometro">Cronómetro</button>
+      <button id="stopwatch_activation">Cronómetro</button>
       <br>
       <br>
-      <button id="activar_temporizador">Temporizador</button>
+      <button id="timer_activation">Temporizador</button>
       <br>
       <br>
     </div>
-    <div id="funciones">
-      <div id="reloj" hidden>
+    <div id="functions">
+      <div id="watch" hidden>
         <p>Reloj</p>
-        <p id="text_reloj">00:00:00</p>
+        <p id="watch_text">00:00:00</p>
       </div>
-      <div id="cronometro" hidden>
+      <div id="stopwatch" hidden>
         <p>Cronómetro</p>
-        <p id="text_cronometro">00:00:00</p>
-        <ul id="tiempos_parciales"></ul>
-        <button id="start_cronometro">Start</button>
-        <button id="flag_cronometro" disabled>Flag</button>
+        <p id="stopwatch_text">00:00:00</p>
+        <ul id="flags"></ul>
+        <button id="stopwatch_start">Start</button>
+        <button id="stopwatch_flag" disabled>Flag</button>
       </div>
-      <div id="temporizador" hidden>
+      <div id="timer" hidden>
         <p>Temporizador</p>
-        <p id="text_temporizador">00:00:00</p>
-        <select id="horas_temporizador"></select>
-        <select id="minutos_temporizador"></select>
-        <select id="segundos_temporizador"></select>
+        <p id="timer_text">00:00:00</p>
+        <select id="timer_hours"></select>
+        <select id="timer_mins"></select>
+        <select id="timer_secs"></select>
         <br>
         <br>
-        <button id="start_temporizador">Start</button>
-        <button id="pause_temporizador" disabled>Pause</button>
-        <button id="stop_temporizador" disabled>Stop</button>
-        <button id="restart_temporizador" disabled>Restart</button>
+        <button id="timer_start">Start</button>
+        <button id="timer_pause" disabled>Pause</button>
+        <button id="timer_stop" disabled>Stop</button>
+        <button id="timer_restart" disabled>Restart</button>
       </div>
     </div>
   </div>
   <script src="preload.js"></script>
-  <script src="reloj.js"></script>
-  <script src="cronometro.js"></script>
-  <script src="temporizador.js"></script>
+  <script src="watch.js"></script>
+  <script src="stopwatch.js"></script>
+  <script src="timer.js"></script>
   <script src="main.js"></script>
 </body>
 
