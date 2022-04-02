@@ -1,18 +1,18 @@
 var watch_activation_element
+var watch_text = document.getElementById("watch_text")
 
 function watchRun() {
-  var watch_text = document.getElementById("watch_text");
-  var date = new Date();
-  var hours = date.getHours();
-  var mins = date.getMinutes();
-  var secs = date.getSeconds();
-  watch_text.innerHTML = hours + ":" + mins + ":" + secs;
+  var date = new Date()
+  var hours = date.getHours()
+  var mins = date.getMinutes()
+  var secs = date.getSeconds()
+  watch_text.innerHTML = hours + ":" + mins + ":" + secs
 }
 
 function watchIntervalCreate() {
-  watch_interval = setInterval(watchRun, 1000);
+  watch_interval = setInterval(watchRun, 1000)
 }
 
 function watchIntervalStop() {
-  clearInterval(watch_interval);
+  clearInterval(watch_interval)
 }

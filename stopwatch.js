@@ -2,26 +2,57 @@ var stopwatch_activation_element
 
 var stopwatch_start, stopwatch_flag
 
-var stopwatch_text = document.getElementById("stopwatch_text")
 var stopwatch_counter = 0
-var stopwatch_mins = 0
-var stopwatch_secs = 0
-var stopwatch_ms = 0
+
+var stopwatch_object = document.getElementById("stopwatch_text")
+class Stopwatch {
+  constructor(stopwatch_mins, stopwatch_secs, stopwatch_ms) {
+    this.stopwatch_mins = stopwatch_mins
+    this.stopwatch_secs = stopwatch_secs
+    this.stopwatch_ms = stopwatch_ms
+  }
+
+  setStopwatchMins(mins) {
+    this.stopwatch_mins = mins
+  }
+
+  setStopwatchSecs(secs) {
+    this.stopwatch_secs = secs
+  }
+
+  setStopwatchMs(ms) {
+    this.stopwatch_ms = ms
+  }
+
+  getStopwatchMins() {
+    return this.stopwatch_mins
+  }
+
+  getStopwatchSecs() {
+    return this.stopwatch_secs
+  }
+
+  getStopwatchMs() {
+    return this.stopwatch_ms
+  }
+}
+
+var stopwatch_object = new Stopwatch(0, 0, 0)
 
 function createListFlags() {
   var partial_time = document.getElementById('flags')
-  var elementNode = document.createElement('li');
-  var textNode = document.createTextNode(stopwatch_mins + ":" + stopwatch_secs + ":" + stopwatch_ms);
+  var elementNode = document.createElement('li')
+  var textNode = document.createTextNode(stopwatch_object.getStopwatchMins() + ":" + stopwatch_object.getStopwatchSecs() + ":" + stopwatch_object.getStopwatchMs())
 
-  elementNode.appendChild(textNode);
-  partial_time.appendChild(elementNode);
+  elementNode.appendChild(textNode)
+  partial_time.appendChild(elementNode)
 }
 
 function deleteListFlags() {
   var partial_time = document.getElementById('flags')
   var elements_list = partial_time.getElementsByTagName('li')
   for (i = elements_list.length - 1; i >= 0; i--) {
-    partial_time.removeChild(elements_list[i]);
+    partial_time.removeChild(elements_list[i])
   }
 }
 
@@ -33,11 +64,8 @@ function stopwatchEvent(start, flag) {
       start.innerHTML = 'Stop'
     } else {
       stopwatchIntervalStop()
-      contador_crono = 0
-      stopwatch_mins = 0
-      stopwatch_secs = 0
-      stopwatch_ms = 0
-      stopwatch_text.innerHTML = 0 + ":" + 0 + ":" + 0;
+      stopwatch_object = new Stopwatch(0, 0, 0)
+      stopwatch_text.innerHTML = 0 + ":" + 0 + ":" + 0
       stopwatch_counter = 0
       start.innerHTML = 'Start'
       deleteListFlags()
@@ -52,16 +80,17 @@ function stopwatchEvent(start, flag) {
 function stopwatchRun() {
   stopwatch_counter++
   if (stopwatch_counter < 100) {
-    stopwatch_ms = stopwatch_counter
+    stopwatch_object.setStopwatchMs(stopwatch_object.getStopwatchMs() + 1)
   } else if (stopwatch_counter == 100) {
     stopwatch_counter = 0
-    stopwatch_secs++
-    if (stopwatch_secs == 60) {
-      stopwatch_secs = 0
-      stopwatch_mins++
+    stopwatch_object.setStopwatchMs(0)
+    stopwatch_object.setStopwatchSecs(stopwatch_object.getStopwatchSecs() + 1)
+    if (stopwatch_object.getStopwatchSecs() == 60) {
+      stopwatch_object.setStopwatchSecs(0)
+      stopwatch_object.setStopwatchMins(stopwatch_object.getStopwatchMins() + 1)
     }
   }
-  stopwatch_text.innerHTML = stopwatch_mins + ":" + stopwatch_secs + ":" + stopwatch_ms;
+  stopwatch_text.innerHTML = stopwatch_object.getStopwatchMins() + ":" + stopwatch_object.getStopwatchSecs() + ":" + stopwatch_object.getStopwatchMs()
 }
 
 function stopwatchIntervalCreate() {

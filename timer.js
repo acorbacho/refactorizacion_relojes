@@ -6,10 +6,10 @@ var timer_hours
 var timer_mins
 var timer_secs
 
-var timer_hours_element = document.getElementById("timer_hours");
-var timer_mins_element = document.getElementById("timer_mins");
-var timer_secs_element = document.getElementById("timer_secs");
-var timer_text = document.getElementById("timer_text");
+var timer_hours_element = document.getElementById("timer_hours")
+var timer_mins_element = document.getElementById("timer_mins")
+var timer_secs_element = document.getElementById("timer_secs")
+var timer_text = document.getElementById("timer_text")
 
 function timerEvent(start, stop, restart, pause) {
   start.addEventListener('click', () => {
@@ -17,7 +17,7 @@ function timerEvent(start, stop, restart, pause) {
     timer_mins = timer_mins_element.value
     timer_secs = timer_secs_element.value
     var time = ((timer_hours * 3600 + timer_mins * 60 + timer_secs) * 1000)
-    timer_text.innerHTML = timer_hours + ":" + timer_mins + ":" + timer_secs;
+    timer_text.innerHTML = timer_hours + ":" + timer_mins + ":" + timer_secs
     timerCreate(time)
     pause.disabled = false
     stop.disabled = false
@@ -28,7 +28,7 @@ function timerEvent(start, stop, restart, pause) {
   stop.addEventListener('click', () => {
     pause.innerHTML = 'Pause'
     timerStop()
-    timer_text.innerHTML = 0 + ":" + 0 + ":" + 0;
+    timer_text.innerHTML = 0 + ":" + 0 + ":" + 0
     start.disabled = false
     restart.disabled = true
     pause.disabled = true
@@ -42,7 +42,7 @@ function timerEvent(start, stop, restart, pause) {
     timer_mins = timer_mins_element.value
     timer_secs = timer_secs_element.value
     var time = ((timer_hours * 3600 + timer_mins * 60 + timer_secs) * 1000)
-    timer_text.innerHTML = timer_hours + ":" + timer_mins + ":" + timer_secs;
+    timer_text.innerHTML = timer_hours + ":" + timer_mins + ":" + timer_secs
     timerCreate(time)
   })
 
@@ -53,7 +53,7 @@ function timerEvent(start, stop, restart, pause) {
     } else {
       pause.innerHTML = 'Pause'
       var time = ((timer_hours * 3600 + timer_mins * 60 + timer_secs) * 1000)
-      timer_text.innerHTML = timer_hours + ":" + timer_mins + ":" + timer_secs;
+      timer_text.innerHTML = timer_hours + ":" + timer_mins + ":" + timer_secs
       timerCreate(time)
     }
   })
@@ -81,7 +81,7 @@ function timerRun() {
     alert('TIME IS OVER!')
     timerButtonReset(timer_start, timer_stop, timer_restart, timer_pause)
   }
-  timer_text.innerHTML = timer_hours + ":" + timer_mins + ":" + timer_secs;
+  timer_text.innerHTML = timer_hours + ":" + timer_mins + ":" + timer_secs
 }
 
 function timerCreate(time) {
