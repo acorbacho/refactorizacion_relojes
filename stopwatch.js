@@ -6,10 +6,10 @@ var stopwatch_counter = 0
 
 var stopwatch_object = document.getElementById("stopwatch_text")
 class Stopwatch {
-  constructor(stopwatch_mins, stopwatch_secs, stopwatch_ms) {
-    this.stopwatch_mins = stopwatch_mins
-    this.stopwatch_secs = stopwatch_secs
-    this.stopwatch_ms = stopwatch_ms
+  constructor(stopwatch_props) {
+    this.stopwatch_mins = stopwatch_props.mins
+    this.stopwatch_secs = stopwatch_props.secs
+    this.stopwatch_ms = stopwatch_props.ms
   }
 
   setStopwatchMins(mins) {
@@ -37,7 +37,11 @@ class Stopwatch {
   }
 }
 
-var stopwatch_object = new Stopwatch(0, 0, 0)
+var stopwatch_object = new Stopwatch({
+  mins: 0,
+  secs: 0,
+  ms: 0
+})
 
 function createListFlags() {
   var partial_time = document.getElementById('flags')
@@ -64,7 +68,11 @@ function stopwatchEvent(start, flag) {
       start.innerHTML = 'Stop'
     } else {
       stopwatchIntervalStop()
-      stopwatch_object = new Stopwatch(0, 0, 0)
+      stopwatch_object = new Stopwatch({
+        mins: 0,
+        secs: 0,
+        ms: 0
+      })
       stopwatch_text.innerHTML = 0 + ":" + 0 + ":" + 0
       stopwatch_counter = 0
       start.innerHTML = 'Start'
