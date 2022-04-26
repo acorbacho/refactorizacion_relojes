@@ -45,11 +45,11 @@ var stopwatch_object = new Stopwatch({
 
 function createListFlags() {
   var partial_time = document.getElementById('flags')
-  var elementNode = document.createElement('li')
-  var textNode = document.createTextNode(stopwatch_object.getStopwatchMins() + ":" + stopwatch_object.getStopwatchSecs() + ":" + stopwatch_object.getStopwatchMs())
+  var element_node = document.createElement('li')
+  var text_node = document.createTextNode(stopwatch_object.getStopwatchMins() + ":" + stopwatch_object.getStopwatchSecs() + ":" + stopwatch_object.getStopwatchMs())
 
-  elementNode.appendChild(textNode)
-  partial_time.appendChild(elementNode)
+  element_node.appendChild(text_node)
+  partial_time.appendChild(element_node)
 }
 
 function deleteListFlags() {
