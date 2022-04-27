@@ -8,13 +8,13 @@ function preload() {
 
 function hideElements() {
   //Variables para almacenar los elementos HTML
-  var watch, stopwatch, timer;
+  let watch, stopwatch, timer;
   watch = document.getElementById("watch");
   stopwatch = document.getElementById("stopwatch");
   timer = document.getElementById("timer");
 
   //Variables para comprobar que elementos deben ocultarse o si es la primera vez que se inicia
-  var isWatch, isStopwatch, isTimer;
+  let isWatch, isStopwatch, isTimer;
   isWatch = localStorage.getItem("isWatch");
   isStopwatch = localStorage.getItem("isStopwatch");
   isTimer = localStorage.getItem("isTimer");
@@ -46,16 +46,16 @@ function hideElements() {
 }
 
 function timerSelectors() {
-  for (var i = 0; i <= 24; i++) {
-    var option = new Option(i, i);
+  for (let i = 0; i <= 24; i++) {
+    let option = new Option(i, i);
     timer_hours_element.appendChild(option);
   }
-  for (var i = 0; i <= 60; i++) {
-    var option = new Option(i, i);
+  for (let i = 0; i <= 60; i++) {
+    let option = new Option(i, i);
     timer_mins_element.appendChild(option);
   }
-  for (var i = 0; i <= 60; i++) {
-    var option = new Option(i, i);
+  for (let i = 0; i <= 60; i++) {
+    let option = new Option(i, i);
     timer_secs_element.appendChild(option);
   }
 }
