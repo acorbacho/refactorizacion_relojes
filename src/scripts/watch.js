@@ -1,11 +1,11 @@
-let watch_text = document.getElementById("watch_text")
+let watch_text = document.getElementById('watch_text')
 
 function watchRun() {
   let date = new Date()
   let hours = date.getHours()
   let mins = date.getMinutes()
   let secs = date.getSeconds()
-  watch_text.innerHTML = hours + ":" + mins + ":" + secs
+  watch_text.innerHTML = hours + ':' + mins + ':' + secs
 }
 
 function watchIntervalCreate() {

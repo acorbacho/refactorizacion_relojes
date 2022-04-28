@@ -8,17 +8,17 @@ window.timer_interval = null
 
 
 let timer_object = new Timer({
-  "secs": timer_secs_element.value,
-  "mins": timer_mins_element.value,
-  "hours": timer_hours_element.value,
-  "elemento": timer_text
+  'secs': timer_secs_element.value,
+  'mins': timer_mins_element.value,
+  'hours': timer_hours_element.value,
+  'elemento': timer_text
 })
 
 let stopwatch_object = new Stopwatch({
-  "mins": 0,
-  "secs": 0,
-  "ms": 0,
-  "element": stopwatch_text
+  'mins': 0,
+  'secs': 0,
+  'ms': 0,
+  'element': stopwatch_text
 })
 
 preload() //preload debe ser una función puramente gráfica, no funcional generalmente

@@ -1,4 +1,4 @@
-let stopwatch_text = document.getElementById("stopwatch_text")
+let stopwatch_text = document.getElementById('stopwatch_text')
 
 function stopwatchEvent(start, flag, object) {
   let anon_stopwatchRun = function () {
@@ -11,7 +11,7 @@ function stopwatchEvent(start, flag, object) {
       start.innerHTML = 'Stop'
     } else {
       stopwatchIntervalStop()
-      stopwatch_text.innerHTML = 0 + ":" + 0 + ":" + 0
+      stopwatch_text.innerHTML = 0 + ':' + 0 + ':' + 0
       object.setCounter(0)
       flag.disabled = true
       start.innerHTML = 'Start'
@@ -26,7 +26,7 @@ function stopwatchEvent(start, flag, object) {
 function createListFlags(object) {
   let partial_time = document.getElementById('flags')
   let element_node = document.createElement('li')
-  let text_node = document.createTextNode(object.getMins() + ":" + object.getSecs() + ":" + object.getMs())
+  let text_node = document.createTextNode(object.getMins() + ':' + object.getSecs() + ':' + object.getMs())
 
   element_node.appendChild(text_node)
   partial_time.appendChild(element_node)

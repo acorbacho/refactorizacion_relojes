@@ -45,6 +45,6 @@ class Timer {
       alert('TIME IS OVER!')
     }
     //Mejorar esto.
-    (this.elemento.innerHTML = this.hours + ":" + this.mins + ":" + this.secs)
+    (this.elemento.innerHTML = this.hours + ':' + this.mins + ':' + this.secs)
   }
 }

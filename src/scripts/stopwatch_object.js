@@ -53,6 +53,6 @@ class Stopwatch {
       }
     }
     //Mejorar esto.
-    (this.element.innerHTML = this.mins + ":" + this.secs + ":" + this.ms)
+    (this.element.innerHTML = this.mins + ':' + this.secs + ':' + this.ms)
   }
 }
